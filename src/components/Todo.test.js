@@ -46,7 +46,7 @@ test("Кнопка 'Добавить' без текста не добавляе�
   const listItems = screen.queryAllByRole("listitem");
   expect(listItems.length).toBe(0);
 
-  const errorMessage = screen.queryByText("Введите задачу!"); // Проверяем ошибку
+  const errorMessage = screen.queryByText("Введите задачу!"); 
   expect(errorMessage).toBeInTheDocument();
 });
 

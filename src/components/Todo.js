@@ -4,16 +4,16 @@ import "./Todo.css";
 const Todo = () => {
   const [tasks, setTasks] = useState([]);
   const [inputValue, setInputValue] = useState("");
-  const [error, setError] = useState(""); // Для вывода ошибки
+  const [error, setError] = useState(""); 
 
   const addTask = () => {
     if (inputValue.trim() === "") {
-      setError("Введите задачу!"); // Если поле пустое, показываем ошибку
+      setError("Введите задачу!"); 
       return;
     }
     setTasks([...tasks, { text: inputValue, completed: false, isEditing: false }]);
     setInputValue("");
-    setError(""); // Убираем ошибку, если задача добавлена
+    setError(""); 
   };
 
   const deleteTask = (index) => {
@@ -53,7 +53,6 @@ const Todo = () => {
         <button onClick={addTask}>Добавить</button>
       </div>
 
-      {/* Здесь выводим ошибку, если есть */}
       {error && <p className="error-message">{error}</p>}
 
       <ul>
@@ -79,7 +78,6 @@ const Todo = () => {
         ))}
       </ul>
 
-      {/* Добавляем кнопку очистки */}
       {tasks.length > 0 && (
         <button className="clear-btn" onClick={() => setTasks([])}>
           Удалить все TODO
